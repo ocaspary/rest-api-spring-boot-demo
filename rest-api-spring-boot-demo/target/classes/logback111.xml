@@ -1,0 +1,14 @@
+<!--https://www.codingame.com/playgrounds/4497/configuring-logback-with-spring-boot-->
+<!--https://www.youtube.com/watch?v=VT5PhL0iaNc-->
+
+<!--<configuration>-->
+	
+<!--  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">-->
+<!--    <encoder>-->
+<!--      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>-->
+<!--    </encoder>-->
+<!--  </appender>-->
+<!--  <root level="debug">-->
+<!--    <appender-ref ref="STDOUT" />-->
+<!--  </root>-->
+<!--</configuration>-->

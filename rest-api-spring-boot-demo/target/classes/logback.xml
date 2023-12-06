@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--https://www.codingame.com/playgrounds/4497/configuring-logback-with-spring-boot-->
+<!--https://www.youtube.com/watch?v=VT5PhL0iaNc-->
+<configuration>
+
+    <!-- Définition de propriétés pour la configuration du logging (répertoire et fichier de sauvegarde) -->
+    <property name="LOG_DIR" value="logs"/>
+    <property name="LOG_FILE" value="${LOG_DIR}/app.log"/>
+
+    <!-- Pattern pour formater les messages de log -->
+    <property name="LOG_PATTERN" value="%date [%level] [%thread] [%logger] - %msg%n"/>
+
+    <!-- Appender pour écrire les logs dans un fichier -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_FILE}</file>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+            <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+		<fileNamePattern>${LOG_FILE}.%i</fileNamePattern>
+		<minIndex>1</minIndex>
+		<maxIndex>10</maxIndex>
+	</rollingPolicy>
+	<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+		<MaxFileSize>5KB</MaxFileSize>
+	</triggeringPolicy>
+        
+    </appender>
+   
+    
+    <!-- Configuration pour la sortie Console (STDOUT) -->
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+    <!-- Configuration spécifique pour la classe Employee (on peut mettre au niveau du package) -->
+    <logger name="com.thinkconstructive.restdemo.springbootlogging.Employee" level="debug">
+<!--        <appender-ref ref="FILE"/>-->
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <!-- Configuration du logger racine -->
+<!--    Faire un essai avec level="info" et leven="debug"-->
+<!--    Faire un autre essai avec ref="FILE" et ref="STDOUT"-->
+    <root level="info">
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>

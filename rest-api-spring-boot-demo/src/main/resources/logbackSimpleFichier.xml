@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Définition de propriétés pour la configuration du logging -->
+    <property name="LOG_DIR" value="logs"/>
+    <property name="LOG_FILE" value="${LOG_DIR}/app.log"/>
+
+    <!-- Pattern pour formater les messages de log -->
+    <property name="LOG_PATTERN" value="%date [%level] [%thread] [%logger] - %msg%n"/>
+
+    <!-- Appender pour écrire les logs dans un fichier -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_FILE}</file>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+    
+        <!-- Configuration pour la sortie Console (STDOUT) -->
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+    <!-- Configuration spécifique pour la classe Employee -->
+    <logger name="com.thinkconstructive.restdemo.springbootlogging.Employee" level="debug">
+        <appender-ref ref="FILE"/>
+<!--        <appender-ref ref="STDOUT"/>-->
+    </logger>
+
+    <!-- Configuration du logger racine -->
+    <root level="debug">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>

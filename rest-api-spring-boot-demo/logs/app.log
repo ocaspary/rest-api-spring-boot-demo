@@ -1,0 +1,5 @@
+2023-11-25 18:59:29,896 [DEBUG] [http-nio-8081-exec-4] [com.thinkconstructive.restdemo.springbootlogging.Employee] - Employee Debug Logging is enabled
+2023-11-25 18:59:55,652 [INFO] [RMI TCP Connection(13)-127.0.0.1] [org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin] - Application shutdown requested.
+2023-11-25 18:59:55,664 [INFO] [RMI TCP Connection(13)-127.0.0.1] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-25 18:59:55,666 [INFO] [RMI TCP Connection(13)-127.0.0.1] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
+2023-11-25 18:59:55,671 [INFO] [RMI TCP Connection(13)-127.0.0.1] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
